@@ -1,3 +1,4 @@
+
 # Dealer & Vehicle Management API
 
 A comprehensive RESTful API built with Spring Boot for managing car dealers, their vehicle inventory, and subscription payments. This project demonstrates a secure, robust, and well-structured backend system adhering to modern best practices.
@@ -18,7 +19,7 @@ A comprehensive RESTful API built with Spring Boot for managing car dealers, the
 -   **Language:** Java 17
 -   **Security:** Spring Security 6
 -   **Data Persistence:** Spring Data JPA / Hibernate
--   **Database:** MySQL (Configured) & PostgreSQL (Ready)
+-   **Database:** **PostgreSQL (Configured)**
 -   **Build Tool:** Apache Maven
 -   **API Documentation:** SpringDoc OpenAPI (Swagger UI)
 -   **Environment Variables:** spring-dotenv
@@ -30,7 +31,7 @@ A comprehensive RESTful API built with Spring Boot for managing car dealers, the
 Before you begin, ensure you have the following installed:
 -   JDK 17 or later
 -   Apache Maven 3.6+
--   MySQL Server 8.0+ (or another compatible database)
+-   **PostgreSQL Server 12+**
 -   A Git client
 
 ## Setup & Configuration
@@ -39,13 +40,13 @@ Follow these steps to get the project running locally.
 
 **1. Clone the Repository**
 ```bash
-git clone https://github.com/your-github-username/your-repo-name.git
+git clone https://github.com/simhadri-bharath/your-repo-name.git
 cd your-repo-name
 ```
 
 **2. Database Setup**
--   Open your MySQL client (e.g., MySQL Workbench, DBeaver).
--   Create a new database schema. The default expected name is `dvm`.
+-   Open your PostgreSQL client (e.g., **pgAdmin, DBeaver**).
+-   Create a new database. The default expected name is `dvm`.
     ```sql
     CREATE DATABASE dvm;
     ```
@@ -54,15 +55,15 @@ cd your-repo-name
 **3. Configure Environment Variables (CRITICAL STEP)**
 This project uses a `.env` file to manage sensitive configuration. You must create this file.
 -   In the root directory of the project, create a new file named `.env`.
--   Copy the content below into your new `.env` file and **update the values** with your local database credentials.
+-   Copy the content below into your new `.env` file and **update the values** with your local PostgreSQL credentials.
 
 ```
 # Local Development Environment Variables
 
-# Database Configuration
-DB_URL=jdbc:mysql://localhost:3306/dvm
-DB_USERNAME=your_mysql_username
-DB_PASSWORD=your_mysql_password
+# Database Configuration for PostgreSQL
+DB_URL=jdbc:postgresql://localhost:5432/dvm
+DB_USERNAME=your_postgres_username
+DB_PASSWORD=your_postgres_password
 
 # JWT Configuration (You can leave this default for local testing)
 JWT_SECRET=this-is-my-super-secret-key-for-local-development-only-12345
@@ -105,7 +106,7 @@ Once the application is running, you can access the interactive Swagger UI to ex
 2.  **Login:** Use the `POST /api/auth/login` endpoint with the new credentials.
 3.  **Copy JWT Token:** From the login response, copy the `token` value.
 4.  **Authorize in Swagger:**
-    -   Click the green "Authorize" button at the top right of the Swagger UI.
+    -   Click the "Authorize" button at the top right of the Swagger UI.
     -   In the dialog box, paste your token into the "value" field.
     -   Click "Authorize" and then "Close".
 5.  You can now successfully test all the protected (locked) endpoints.
@@ -171,7 +172,8 @@ Once the application is running, you can access the interactive Swagger UI to ex
 
 The API provides structured error responses.
 
-**Example 404 Not Found:**```json
+**Example 404 Not Found:**
+```json
 {
   "timestamp": "2025-08-20T18:30:00.123",
   "status": 404,
@@ -199,5 +201,5 @@ The API provides structured error responses.
 
 ## Author
 
--   **Name:** [Simhadri Bharath]
--   **GitHub:** [https://github.com/simhadri-bharath]
+-   **Name:** Simhadri Bharath
+-   **GitHub:** [https://github.com/simhadri-bharath](https://github.com/simhadri-bharath)
